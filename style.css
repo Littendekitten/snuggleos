@@ -7,44 +7,68 @@
 }
 
 body {
-    /* Lichte, zachte achtergrond zoals in de referentiefoto */
+    /* Lichte achtergrondkleur */
     background-color: #f0f4f9; 
-    color: #333; /* Donkere tekst op lichte achtergrond */
+    color: #333; 
     overflow: hidden; 
 }
 
-/* --- DESKTOP EN TAALKBALK --- */
+/* --- DESKTOP --- */
 #desktop {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: calc(100vh - 48px); /* Ruimte vrijlaten voor de taakbalk */
-    /* Optioneel: Achtergrondafbeelding voor een extra touch */
-    /* background-image: url('pad/naar/jouw/desktop-wallpaper.jpg'); */
+    height: calc(100vh - 48px); 
+    
+    /* PLAATS JOUW DESKTOP ACHTERGROND HIER! */
+    /* VERWIJDER DEZE REGEL EN DE REGEL ERONDER ZODRA JE EEN AFBEELDING HEBT */
+    background-color: #c7d2e4; /* Eenvoudige lichte placeholder kleur */
+    
+    /* VOORBEELD: uncomment en pas het pad aan: */
+    /* background-image: url('pad/naar/jouw/desktop-image.jpg'); */
     background-size: cover;
     background-position: center;
 }
 
+/* --- DESKTOP ICONEN --- */
+.desktop-icon {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 80px;
+    text-align: center;
+    cursor: pointer;
+    color: #333;
+    font-size: 0.8em;
+}
+
+.desktop-icon img {
+    width: 48px; /* Grootte van het icoon */
+    height: 48px;
+    margin-bottom: 5px;
+}
+
+/* --- TAALKBALK & CENTERING --- */
 #taskbar {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 48px; /* Iets hogere balk */
+    height: 48px; 
     background-color: transparent; 
     display: flex;
     align-items: center;
-    justify-content: center; /* Centraal uitlijnen is de nieuwe look */
+    justify-content: center; /* Centraal uitlijnen van iconen */
     z-index: 1000;
 }
 
-/* Container om de iconen te centreren */
 #taskbar-icons {
     height: 100%;
     padding: 0 10px;
-    background-color: rgba(255, 255, 255, 0.7); /* Lichte, semi-transparante achtergrond */
-    backdrop-filter: blur(15px); /* Het "Aero" effect */
+    /* Lichte, semi-transparante achtergrond, essentieel voor de minimalistische look */
+    background-color: rgba(255, 255, 255, 0.7); 
+    backdrop-filter: blur(15px); 
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -58,46 +82,25 @@ body {
     width: 38px;
     padding: 6px;
     border-radius: 4px;
-    transition: background-color 0.2s, transform 0.1s;
+    transition: background-color 0.2s;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #start-button:hover, .taskbar-app-icon:hover {
     background-color: rgba(0, 0, 0, 0.08);
 }
 
-.taskbar-app-icon {
-    background-color: #eee;
-    /* Een simpele app-icoon weergave */
-    border: 1px solid #ccc; 
+.taskbar-app-icon img {
+    width: 24px;
+    height: 24px;
 }
 
 .taskbar-app-icon.active {
     border-bottom: 3px solid #6c77ff; /* Lichte blauwe indicator */
-    transform: translateY(-1px);
 }
-
-/* Het Vloeibare Vierkantjes Icoon (Aangepast voor Lichte Stijl) */
-.liquid-squares {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 1px; 
-}
-
-.liquid-squares .square {
-    width: 100%;
-    height: 100%;
-    border-radius: 3px; 
-    /* Subtiele, zachte kleuren die passen bij de minimalistische foto */
-    background: #FFD4A2; /* Licht Oranje */
-}
-
-.liquid-squares .top-right { background: #A2FFD4; } /* Licht Groen */
-.liquid-squares .bottom-left { background: #A2D4FF; } /* Licht Blauw */
-.liquid-squares .bottom-right { background: #D4A2FF; } /* Licht Paars */
-
 
 /* --- VENSTERS (APPLICATIES) --- */
 .window {
@@ -105,18 +108,14 @@ body {
     top: 100px;
     left: 100px;
     width: 450px;
-    /* Lichte achtergrond met veel schaduw, zoals in de referentiefoto */
+    /* Lichte achtergrond met veel schaduw */
     background-color: rgba(255, 255, 255, 0.95);
     border: 1px solid rgba(0, 0, 0, 0.05);
-    border-radius: 12px; /* Zachtere hoeken */
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); /* Duidelijke schaduw */
+    border-radius: 12px; 
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); 
     overflow: hidden;
     color: #333;
     transition: box-shadow 0.2s;
-}
-
-.window:hover {
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2); /* Meer diepte bij hover */
 }
 
 .title-bar {
@@ -138,7 +137,6 @@ body {
     font-weight: bold;
     font-size: 1.1em;
     padding: 0 5px;
-    transition: background-color 0.2s, color 0.2s;
     border-radius: 4px;
 }
 
@@ -149,8 +147,6 @@ body {
 
 .content {
     padding: 20px;
-    font-size: 0.95em;
-    line-height: 1.6;
 }
 
 /* --- SYSTEEM TRAY (Tijd) --- */
