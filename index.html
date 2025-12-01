@@ -11,31 +11,35 @@
     <div id="desktop">
         <div class="window" id="welcome-window">
             <div class="title-bar">
-                <span>Welkom in Web OS</span>
+                <span>✨ Welkom in Web OS</span>
                 <div class="controls">
                     <button class="close-btn">X</button>
                 </div>
             </div>
             <div class="content">
-                <p>Dit is een demo van de interface van je nieuwe OS, gebouwd met HTML en CSS!</p>
-                <p>Je kunt dit venster slepen met JavaScript.</p>
+                <p>Dit is een demo van de interface van je nieuwe OS, gebouwd met de minimalistische, lichte stijl van jouw referentiefoto!</p>
+                <p>Probeer het venster te sluiten met de X.</p>
             </div>
         </div>
 
     </div>
 
     <div id="taskbar">
-        <div id="start-button">
-            <div class="liquid-squares">
-                <div class="square top-left"></div>
-                <div class="square top-right"></div>
-                <div class="square bottom-left"></div>
-                <div class="square bottom-right"></div>
+        <div id="taskbar-icons">
+            <div id="start-button">
+                <div class="liquid-squares">
+                    <div class="square top-left"></div>
+                    <div class="square top-right"></div>
+                    <div class="square bottom-left"></div>
+                    <div class="square bottom-right"></div>
+                </div>
             </div>
+            <div class="taskbar-app-icon active"></div>
+            <div class="taskbar-app-icon"></div>
         </div>
 
         <div id="system-tray">
-            <span id="os-time">11:56</span>
+            <span id="os-time">12:55 PM</span>
         </div>
     </div>
 
@@ -43,20 +47,18 @@
         // Functie om de klok te updaten
         function updateTime() {
             const now = new Date();
+            // Gebruik een neutrale tijdweergave
             const timeString = now.toLocaleTimeString('nl-NL', { hour: '2-digit', minute: '2-digit' });
             document.getElementById('os-time').textContent = timeString;
         }
 
-        // Update de tijd elke seconde
         setInterval(updateTime, 1000);
-        updateTime(); // Eerste aanroep om direct de tijd te tonen
+        updateTime();
 
         // Simpele functionaliteit om het welkomstvenster te sluiten
         document.querySelector('.close-btn').addEventListener('click', function() {
             document.getElementById('welcome-window').style.display = 'none';
         });
-
-        // HIER KOMT MEER COMPLEXE JAVASCRIPT VOOR SLEPEN EN KLIKKEN LATER
     </script>
 </body>
 </html>
