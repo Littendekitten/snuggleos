@@ -21,8 +21,7 @@ body {
     height: calc(100vh - 48px); 
     
     /* PLAATS JOUW DESKTOP ACHTERGROND HIER! */
-    /* Bijvoorbeeld: */
-    background-image: url('images/banner.png'); 
+    background-image: url('images/desktop-wallpaper.jpg'); /* PAS DIT AAN */
     
     background-size: cover; 
     background-position: center;
@@ -32,67 +31,68 @@ body {
 /* --- DESKTOP ICONEN --- */
 .desktop-icon {
     position: absolute;
-    top: 20px; /* Begin bovenaan */
-    left: 20px; /* Begin links */
+    top: 20px; 
+    left: 20px; 
     width: 80px;
     text-align: center;
     cursor: pointer;
-    color: #fff; /* Witte tekst voor betere leesbaarheid op achtergrond */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); /* Schaduw voor contrast */
+    color: #fff; 
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); 
     font-size: 0.8em;
-    padding: 5px; /* Voeg wat padding toe */
-    border-radius: 8px; /* Zachte hoeken voor de hover-state */
+    padding: 5px; 
+    border-radius: 8px; 
     transition: background-color 0.2s;
 }
 
 .desktop-icon:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* Lichte hover-overlay */
+    background-color: rgba(255, 255, 255, 0.2); 
 }
 
 .desktop-icon .icon-image {
-    width: 48px; /* Grootte van het icoon */
+    width: 48px; 
     height: 48px;
     margin-bottom: 5px;
-    display: block; /* Zorgt ervoor dat margin-bottom werkt */
+    display: block; 
     margin-left: auto;
     margin-right: auto;
 }
 
-/* --- TAALKBALK & CENTERING --- */
+/* --- TAAKBALK & CENTERING (NU DOORZICHTIG) --- */
 #taskbar {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 48px; 
-    background-color: transparent; 
+    background-color: transparent; /* Belangrijk: De achtergrond is nu compleet doorzichtig */
     display: flex;
     align-items: center;
     justify-content: center; 
     z-index: 1000;
 }
 
+/* De Gecentreerde Iconen Box (het "Zwevende Eiland") */
 #taskbar-icons {
     height: 100%;
     padding: 0 10px;
-    background-color: rgba(255, 255, 255, 0.7); 
+    background-color: rgba(255, 255, 255, 0.7); /* Lichte, semi-transparante achtergrond */
     backdrop-filter: blur(15px); 
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Duidelijkere schaduw voor zwevend effect */
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-/* --- START BUTTON en APPLICATIE ICONEN (nu met afbeeldingen) --- */
+/* --- START BUTTON en APPLICATIE ICONEN --- */
 #start-button, .taskbar-app-icon {
     height: 38px;
     width: 38px;
-    padding: 0; /* Geen padding hier, de afbeelding vult de ruimte */
+    padding: 0; 
     border-radius: 4px;
     transition: background-color 0.2s;
     cursor: pointer;
-    display: flex; /* Centraal de afbeelding in de knop */
+    display: flex; 
     align-items: center;
     justify-content: center;
 }
@@ -102,18 +102,34 @@ body {
 }
 
 #start-button .icon-image {
-    width: 28px; /* Start icoon iets kleiner */
+    width: 28px; 
     height: 28px;
 }
 
 .taskbar-app-icon .icon-image {
-    width: 24px; /* Normale app iconen */
+    width: 24px; 
     height: 24px;
 }
 
 .taskbar-app-icon.active {
     border-bottom: 3px solid #6c77ff; 
-    padding-bottom: 0; /* Herstel padding na border */
+    padding-bottom: 0; 
+}
+
+/* --- SYSTEEM TRAY (Tijd - Nu losgekoppeld en rechts) --- */
+#system-tray {
+    position: absolute; /* Zorgt ervoor dat hij los staat van de gecentreerde iconen */
+    right: 10px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    background-color: rgba(255, 255, 255, 0.7); 
+    backdrop-filter: blur(15px);
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Zwevend effect */
+    font-size: 0.9em;
+    font-weight: 600;
 }
 
 /* --- VENSTERS (APPLICATIES) --- */
@@ -160,21 +176,4 @@ body {
 
 .content {
     padding: 20px;
-}
-
-/* --- SYSTEEM TRAY (Tijd) --- */
-#system-tray {
-    position: fixed;
-    right: 10px;
-    bottom: 0;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    padding: 0 15px;
-    background-color: rgba(255, 255, 255, 0.7); 
-    backdrop-filter: blur(15px);
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    font-size: 0.9em;
-    font-weight: 600;
 }
