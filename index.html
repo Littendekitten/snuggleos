@@ -17,37 +17,42 @@
                 </div>
             </div>
             <div class="content">
-                <p>Dit is een demo van de interface van je nieuwe OS, gebouwd met de minimalistische, lichte stijl van jouw referentiefoto!</p>
-                <p>Probeer het venster te sluiten met de X.</p>
+                <p>Dit is de Web OS interface. Vervang de placeholder-tekst door jouw eigen apps en info!</p>
             </div>
         </div>
-
+        
+        <div class="desktop-icon">
+            <img src="icon-folder.png" alt="Mijn Documenten" class="icon-image"> 
+            <span>Mijn Documenten</span>
+        </div>
+        <div class="desktop-icon" style="top: 100px;">
+            <img src="icon-browser.png" alt="Browser" class="icon-image">
+            <span>Web Browser</span>
+        </div>
     </div>
 
     <div id="taskbar">
         <div id="taskbar-icons">
             <div id="start-button">
-                <div class="liquid-squares">
-                    <div class="square top-left"></div>
-                    <div class="square top-right"></div>
-                    <div class="square bottom-left"></div>
-                    <div class="square bottom-right"></div>
-                </div>
+                <img src="start-icon-vloeibaar.png" alt="Start" class="icon-image">
             </div>
-            <div class="taskbar-app-icon active"></div>
-            <div class="taskbar-app-icon"></div>
+
+            <div class="taskbar-app-icon active">
+                <img src="app-settings.png" alt="Settings" class="icon-image">
+            </div>
+            <div class="taskbar-app-icon">
+                <img src="app-music.png" alt="Music" class="icon-image">
+            </div>
         </div>
 
         <div id="system-tray">
-            <span id="os-time">12:55 PM</span>
+            <span id="os-time">12:59 PM</span>
         </div>
     </div>
 
     <script>
-        // Functie om de klok te updaten
         function updateTime() {
             const now = new Date();
-            // Gebruik een neutrale tijdweergave
             const timeString = now.toLocaleTimeString('nl-NL', { hour: '2-digit', minute: '2-digit' });
             document.getElementById('os-time').textContent = timeString;
         }
@@ -55,7 +60,6 @@
         setInterval(updateTime, 1000);
         updateTime();
 
-        // Simpele functionaliteit om het welkomstvenster te sluiten
         document.querySelector('.close-btn').addEventListener('click', function() {
             document.getElementById('welcome-window').style.display = 'none';
         });
