@@ -1,0 +1,131 @@
+/* Globale reset en body styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #1a1a2e; /* Donkere, moderne achtergrond */
+    color: #f0f0f0;
+    overflow: hidden; /* Zorgt ervoor dat er geen scrollbars zijn voor de desktop */
+}
+
+/* --- DESKTOP EN TAALKBALK --- */
+#desktop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 40px); /* Ruimte vrijlaten voor de taakbalk */
+}
+
+#taskbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background-color: rgba(30, 30, 45, 0.9); /* Semi-transparante donkere balk */
+    backdrop-filter: blur(10px); /* Vloeiend, modern effect */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    z-index: 1000;
+}
+
+/* --- START BUTTON EN ICON --- */
+#start-button {
+    height: 30px;
+    width: 30px;
+    padding: 5px;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+    cursor: pointer;
+}
+
+#start-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Het Vloeibare Vierkantjes Icoon (Gemaakt met CSS) */
+.liquid-squares {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1px; /* De lichte scheiding tussen de vierkanten */
+}
+
+.liquid-squares .square {
+    width: 100%;
+    height: 100%;
+    border-radius: 3px; /* Zachte hoeken voor het "vloeibare" gevoel */
+    background: linear-gradient(135deg, #FF6F91, #FF9B9B); /* Roze/rode basis */
+    transition: transform 0.3s;
+}
+
+/* Subtiele kleurvariaties voor dynamiek */
+.liquid-squares .top-right {
+    background: linear-gradient(135deg, #69A3FF, #9BFFFF); /* Blauwe/cyaan tint */
+    transform: translate(1px, -1px);
+}
+.liquid-squares .bottom-left {
+    background: linear-gradient(135deg, #00C9A7, #84ECBC); /* Groene/aqua tint */
+}
+.liquid-squares .bottom-right {
+    background: linear-gradient(135deg, #C900C9, #FF7BFF); /* Paarse/magenta tint */
+    transform: translate(-1px, 1px);
+}
+
+
+/* --- VENSTERS (APPLICATIES) --- */
+.window {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    width: 350px;
+    background-color: rgba(40, 40, 60, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    overflow: hidden;
+}
+
+.title-bar {
+    height: 30px;
+    background-color: rgba(50, 50, 70, 0.9);
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    cursor: grab; /* Om aan te geven dat je het kunt verslepen */
+}
+
+.controls button {
+    background: none;
+    border: none;
+    color: #f0f0f0;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 0 5px;
+    transition: background-color 0.2s;
+}
+
+.controls .close-btn:hover {
+    background-color: #ff3333;
+}
+
+.content {
+    padding: 15px;
+}
+
+/* --- SYSTEEM TRAY --- */
+#system-tray {
+    padding-right: 10px;
+    font-size: 0.9em;
+}
