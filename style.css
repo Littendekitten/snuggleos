@@ -7,7 +7,6 @@
 }
 
 body {
-    /* Lichte achtergrondkleur */
     background-color: #f0f4f9; 
     color: #333; 
     overflow: hidden; 
@@ -21,38 +20,42 @@ body {
     width: 100%;
     height: calc(100vh - 48px); 
     
-    /* ======== AANPASSING VOOR AFBEELDING ACHTERGROND ======== */
-    /* 1. URL van de afbeelding. Vervang 'pad/naar/jouw/desktop-image.jpg' door de juiste naam. */
-    background-image: url('images/banner.png'); 
+    /* PLAATS JOUW DESKTOP ACHTERGROND HIER! */
+    /* Bijvoorbeeld: */
+    background-image: url('images/desktop-wallpaper.jpg'); 
     
-    /* 2. Zorgt ervoor dat de afbeelding de hele container bedekt */
     background-size: cover; 
-    
-    /* 3. Centreer de afbeelding */
     background-position: center;
-    
-    /* 4. Voorkom herhaling */
     background-repeat: no-repeat;
-    /* ======================================================= */
 }
 
 /* --- DESKTOP ICONEN --- */
 .desktop-icon {
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 20px; /* Begin bovenaan */
+    left: 20px; /* Begin links */
     width: 80px;
     text-align: center;
     cursor: pointer;
-    color: #fff; /* Maak de tekst wit voor betere zichtbaarheid op de achtergrond */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); /* Lichte schaduw voor contrast */
+    color: #fff; /* Witte tekst voor betere leesbaarheid op achtergrond */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); /* Schaduw voor contrast */
     font-size: 0.8em;
+    padding: 5px; /* Voeg wat padding toe */
+    border-radius: 8px; /* Zachte hoeken voor de hover-state */
+    transition: background-color 0.2s;
 }
 
-.desktop-icon img {
-    width: 48px; 
+.desktop-icon:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Lichte hover-overlay */
+}
+
+.desktop-icon .icon-image {
+    width: 48px; /* Grootte van het icoon */
     height: 48px;
     margin-bottom: 5px;
+    display: block; /* Zorgt ervoor dat margin-bottom werkt */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* --- TAALKBALK & CENTERING --- */
@@ -81,15 +84,15 @@ body {
     gap: 10px;
 }
 
-/* --- START BUTTON en APPLICATIE ICONEN --- */
+/* --- START BUTTON en APPLICATIE ICONEN (nu met afbeeldingen) --- */
 #start-button, .taskbar-app-icon {
     height: 38px;
     width: 38px;
-    padding: 6px;
+    padding: 0; /* Geen padding hier, de afbeelding vult de ruimte */
     border-radius: 4px;
     transition: background-color 0.2s;
     cursor: pointer;
-    display: flex;
+    display: flex; /* Centraal de afbeelding in de knop */
     align-items: center;
     justify-content: center;
 }
@@ -98,13 +101,19 @@ body {
     background-color: rgba(0, 0, 0, 0.08);
 }
 
-.taskbar-app-icon img {
-    width: 24px;
+#start-button .icon-image {
+    width: 28px; /* Start icoon iets kleiner */
+    height: 28px;
+}
+
+.taskbar-app-icon .icon-image {
+    width: 24px; /* Normale app iconen */
     height: 24px;
 }
 
 .taskbar-app-icon.active {
     border-bottom: 3px solid #6c77ff; 
+    padding-bottom: 0; /* Herstel padding na border */
 }
 
 /* --- VENSTERS (APPLICATIES) --- */
