@@ -21,14 +21,19 @@ body {
     width: 100%;
     height: calc(100vh - 48px); 
     
-    /* PLAATS JOUW DESKTOP ACHTERGROND HIER! */
-    /* VERWIJDER DEZE REGEL EN DE REGEL ERONDER ZODRA JE EEN AFBEELDING HEBT */
-    background-color: #c7d2e4; /* Eenvoudige lichte placeholder kleur */
+    /* ======== AANPASSING VOOR AFBEELDING ACHTERGROND ======== */
+    /* 1. URL van de afbeelding. Vervang 'pad/naar/jouw/desktop-image.jpg' door de juiste naam. */
+    background-image: url('pad/naar/jouw/desktop-image.jpg'); 
     
-    /* VOORBEELD: uncomment en pas het pad aan: */
-    /* background-image: url('pad/naar/jouw/desktop-image.jpg'); */
-    background-size: cover;
+    /* 2. Zorgt ervoor dat de afbeelding de hele container bedekt */
+    background-size: cover; 
+    
+    /* 3. Centreer de afbeelding */
     background-position: center;
+    
+    /* 4. Voorkom herhaling */
+    background-repeat: no-repeat;
+    /* ======================================================= */
 }
 
 /* --- DESKTOP ICONEN --- */
@@ -39,12 +44,13 @@ body {
     width: 80px;
     text-align: center;
     cursor: pointer;
-    color: #333;
+    color: #fff; /* Maak de tekst wit voor betere zichtbaarheid op de achtergrond */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); /* Lichte schaduw voor contrast */
     font-size: 0.8em;
 }
 
 .desktop-icon img {
-    width: 48px; /* Grootte van het icoon */
+    width: 48px; 
     height: 48px;
     margin-bottom: 5px;
 }
@@ -59,14 +65,13 @@ body {
     background-color: transparent; 
     display: flex;
     align-items: center;
-    justify-content: center; /* Centraal uitlijnen van iconen */
+    justify-content: center; 
     z-index: 1000;
 }
 
 #taskbar-icons {
     height: 100%;
     padding: 0 10px;
-    /* Lichte, semi-transparante achtergrond, essentieel voor de minimalistische look */
     background-color: rgba(255, 255, 255, 0.7); 
     backdrop-filter: blur(15px); 
     border-radius: 8px;
@@ -99,7 +104,7 @@ body {
 }
 
 .taskbar-app-icon.active {
-    border-bottom: 3px solid #6c77ff; /* Lichte blauwe indicator */
+    border-bottom: 3px solid #6c77ff; 
 }
 
 /* --- VENSTERS (APPLICATIES) --- */
@@ -108,7 +113,6 @@ body {
     top: 100px;
     left: 100px;
     width: 450px;
-    /* Lichte achtergrond met veel schaduw */
     background-color: rgba(255, 255, 255, 0.95);
     border: 1px solid rgba(0, 0, 0, 0.05);
     border-radius: 12px; 
