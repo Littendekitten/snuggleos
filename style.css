@@ -23,7 +23,7 @@ body {
     
     /* ======== AANPASSING VOOR AFBEELDING ACHTERGROND ======== */
     /* 1. URL van de afbeelding. Vervang 'pad/naar/jouw/desktop-image.jpg' door de juiste naam. */
-    background-image: url('pad/naar/jouw/desktop-image.jpg'); 
+    background-image: url('images/banner.png'); 
     
     /* 2. Zorgt ervoor dat de afbeelding de hele container bedekt */
     background-size: cover; 
